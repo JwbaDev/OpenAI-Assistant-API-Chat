@@ -10,8 +10,8 @@ type FileDetail = {
 };
 
 export const useChatState = () => {
-  
-  
+
+
   const [assistantName, setAssistantName] = useState('');
   const [assistantModel, setAssistantModel] = useState('gpt-3.5-turbo-1106');
   const [assistantDescription, setAssistantDescription] = useState('');
@@ -23,7 +23,8 @@ export const useChatState = () => {
   const [threadId, setThreadId] = useState<string | null>(null);
   const [isStartLoading, setStartLoading] = useState(false);
   const [isSending, setIsSending] = useState(false);
-  const [initialThreadMessage, setInitialThreadMessage] = useState('You are a Pirate! introduce yourself');
+  const [initialThreadMessage, setInitialThreadMessage] = useState('Hi! introduce yourself');
+  // const [initialThreadMessage, setInitialThreadMessage] = useState('You are a Pirate! introduce yourself');
   const [statusMessage, setStatusMessage] = useState('');
   const counter = useRef(0);
   const inputRef = useRef(null);
@@ -35,7 +36,7 @@ export const useChatState = () => {
   const [isLoadingFirstMessage, setIsLoadingFirstMessage] = useState(false);
   const [chatUploadedFiles, setChatUploadedFiles] = useState<File[]>([]);
   const [chatFileDetails, setChatFileDetails] = useState<FileDetail[]>([]);
-  const [fileIds, setFileIds] = useState<string[]>([]); 
+  const [fileIds, setFileIds] = useState<string[]>([]);
 
 
   return {
@@ -55,7 +56,7 @@ export const useChatState = () => {
     counter,
     inputRef,
     formRef,
-    initialThreadMessage, 
+    initialThreadMessage,
     setInitialThreadMessage,
     chatManager, setChatManager,
     isMessageLoading, setIsMessageLoading,
@@ -64,7 +65,7 @@ export const useChatState = () => {
     chatUploadedFiles, setChatUploadedFiles,
     chatFileDetails, setChatFileDetails,
     fileIds, setFileIds,
-    
+
 
   };
 };
